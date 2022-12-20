@@ -15,9 +15,9 @@ if (!isset($_SESSION['admin'])) {
 <?php
 
 // jumlah siswa
-$jumlahSiswa = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tb_siswa WHERE status=1 "));
+$jumlahSiswa = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tb_mahasiswa WHERE status=1 "));
 // jumlah guru
-$jumlahGuru = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tb_guru WHERE status='Y' "));
+$jumlahGuru = mysqli_num_rows(mysqli_query($con, "SELECT * FROM tb_dosen WHERE status='Y' "));
 
 $id_login = @$_SESSION['admin'];
 
@@ -100,7 +100,7 @@ $data = mysqli_fetch_array($sql);
 										<div class="user-box">
 											<div class="avatar-lg"><img src="../assets/img/user/<?= $data['foto'] ?>" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4><?= $data['nama_guru'] ?></h4>
+												<h4><?= $data['nama_dosen'] ?></h4>
 												<p class="text-muted"><?= $data['email'] ?></p>
 
 											</div>
@@ -198,7 +198,7 @@ $data = mysqli_fetch_array($sql);
 										</a>
 									</li>
 									<li>
-										<a href="?page=master&act=mapel">
+										<a href="?page=master&act=matkul">
 											<span class="sub-item">Daftar Mata Kuliah</span>
 										</a>
 									</li>
@@ -317,7 +317,7 @@ $data = mysqli_fetch_array($sql);
 					} elseif ($act == 'set_ta') {
 						include 'modul/master/ta/set.php';
 						// mapel
-					} elseif ($act == 'mapel') {
+					} elseif ($act == 'matkul') {
 						include 'modul/master/matkul/data.php';
 					} elseif ($act == 'delmapel') {
 						include 'modul/master/matkul/del.php';

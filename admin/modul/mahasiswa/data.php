@@ -44,15 +44,15 @@
             <tbody>
               <?php
               $no = 1;
-              $siswa = mysqli_query($con, "SELECT * FROM tb_siswa
-                 INNER JOIN tb_mkelas ON tb_siswa.id_mkelas=tb_mkelas.id_mkelas
-                 ORDER BY id_siswa ASC
+              $siswa = mysqli_query($con, "SELECT * FROM tb_mahasiswa
+                 INNER JOIN tb_mkelas ON tb_mahasiswa.id_mkelas=tb_mkelas.id_mkelas
+                 ORDER BY id_mahasiswa ASC
                 ");
               foreach ($siswa as $g) { ?>
                 <tr>
                   <td><?= $no++; ?>.</td>
-                  <td><?= $g['nis']; ?></td>
-                  <td><?= $g['nama_siswa']; ?></td>
+                  <td><?= $g['nim']; ?></td>
+                  <td><?= $g['nama_mahasiswa']; ?></td>
                   <td><?= $g['nama_kelas']; ?></td>
                   <td><?= $g['th_angkatan']; ?></td>
                   <td><?php if ($g['status'] == 1) {
@@ -62,8 +62,8 @@
                       } ?></td>
                   <td><img src="../assets/img/user/<?= $g['foto'] ?>" width="45" height="45"></td>
                   <td>
-                    <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=mahasiswa&act=del&id=<?= $g['id_siswa'] ?>"><i class="fas fa-trash"></i></a>
-                    <a class="btn btn-info btn-sm" href="?page=mahasiswa&act=edit&id=<?= $g['id_siswa'] ?>"><i class="far fa-edit"></i></a>
+                    <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=mahasiswa&act=del&id=<?= $g['id_mahasiswa'] ?>"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-info btn-sm" href="?page=mahasiswa&act=edit&id=<?= $g['id_mahasiswa'] ?>"><i class="far fa-edit"></i></a>
                   </td>
                 </tr>
               <?php } ?>

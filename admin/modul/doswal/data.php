@@ -30,10 +30,6 @@
                     </div>
                 </div>
                 <div class="card-body">
-
-
-
-
                     <table class="table table-hover table-sm">
                         <thead>
                             <tr>
@@ -46,24 +42,24 @@
                         <tbody>
                             <?php
                             $no = 1;
-                            $kelas = mysqli_query($con, "SELECT * FROM tb_walikelas
-                INNER JOIN tb_guru ON tb_walikelas.id_guru=tb_guru.id_guru
-                INNER JOIN tb_mkelas ON tb_walikelas.id_mkelas=tb_mkelas.id_mkelas
+                            $kelas = mysqli_query($con, "SELECT * FROM tb_dosenwali
+                INNER JOIN tb_dosen ON tb_dosenwali.id_dosen=tb_dosen.id_dosen
+                INNER JOIN tb_mkelas ON tb_dosenwali.id_mkelas=tb_mkelas.id_mkelas
 
-                ORDER BY tb_walikelas.id_mkelas DESC");
+                ORDER BY tb_dosenwali.id_mkelas DESC");
                             foreach ($kelas as $k) { ?>
                                 <tr>
                                     <td><?= $no++; ?>.</td>
 
                                     <td><?= $k['nama_kelas']; ?></td>
-                                    <td><?= $k['nama_guru']; ?></td>
+                                    <td><?= $k['nama_dosen']; ?></td>
                                     <td>
 
-                                        <a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#edit<?= $k['id_walikelas'] ?>"><i class="far fa-edit"></i> Edit</a>
-                                        <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=master&act=delwakel&id=<?= $k['id_walikelas'] ?>"><i class="fas fa-trash"></i> Del</a>
+                                        <a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#edit<?= $k['id_dosenwali'] ?>"><i class="far fa-edit"></i> Edit</a>
+                                        <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=master&act=delwakel&id=<?= $k['id_dosenwali'] ?>"><i class="fas fa-trash"></i> Del</a>
 
                                         <!-- Modal -->
-                                        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit<?= $k['id_walikelas'] ?>" class="modal fade" style="display: none;">
+                                        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit<?= $k['id_dosenwali'] ?>" class="modal fade" style="display: none;">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -72,19 +68,19 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <form action="" method="post" class="form-horizontal">
-                                                            <input type="hidden" name="id" value="<?= $k['id_walikelas'] ?>">
+                                                            <input type="hidden" name="id" value="<?= $k['id_dosenwali'] ?>">
                                                             <div class="form-group">
                                                                 <label>Nama Guru</label>
                                                                 <select name="wakel" class="form-control">
                                                                     <?php
-                                                                    $wkel = mysqli_query($con, "SELECT * FROM tb_guru");
+                                                                    $wkel = mysqli_query($con, "SELECT * FROM tb_dosen");
                                                                     foreach ($wkel as $wk) {
-                                                                        if ($wk['id_guru'] == $k['id_guru']) {
+                                                                        if ($wk['id_dosen'] == $k['id_dosen']) {
                                                                             $selected = "selected";
                                                                         } else {
                                                                             $selected = '';
                                                                         }
-                                                                        echo "<option value='$wk[id_guru]' $selected>$wk[nama_guru]</option>";
+                                                                        echo "<option value='$wk[id_dosen]' $selected>$wk[nama_dosen]</option>";
                                                                     }
 
                                                                     ?>
@@ -123,11 +119,11 @@
                                                         </form>
                                                         <?php
                                                         if (isset($_POST['edit'])) {
-                                                            $save = mysqli_query($con, "UPDATE tb_walikelas SET id_guru='$_POST[wakel]',id_mkelas='$_POST[kelas]' WHERE id_walikelas='$_POST[id]' ");
+                                                            $save = mysqli_query($con, "UPDATE tb_dosenwali SET id_dosen='$_POST[wakel]',id_mkelas='$_POST[kelas]' WHERE id_dosenwali='$_POST[id]' ");
                                                             if ($save) {
                                                                 echo "<script>
                         alert('Data diubah !');
-                        window.location='?page=walas';
+                        window.location='?page=doswal';
                         </script>";
                                                             }
                                                         }

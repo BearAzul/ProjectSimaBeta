@@ -62,12 +62,12 @@ $semAktif = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM tb_semester WHE
 							<div class="col-md-6">
 								<div class="form-group">
 									<label>Dosen Mata Kuliah</label>
-									<select name="guru" class="form-control">
+									<select name="dosen" class="form-control">
 										<option value="">- Pilih -</option>
 										<?php
-										$guru = mysqli_query($con, "SELECT * FROM tb_guru ORDER BY id_guru ASC");
+										$guru = mysqli_query($con, "SELECT * FROM tb_dosen ORDER BY id_dosen ASC");
 										foreach ($guru as $g) {
-											echo "<option value='$g[id_guru]'>$g[nama_guru]</option>";
+											echo "<option value='$g[id_dosen]'>$g[nama_dosen]</option>";
 										}
 										?>
 
@@ -78,12 +78,12 @@ $semAktif = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM tb_semester WHE
 							<div class="col-md-6">
 								<div class="form-group">
 									<label>Mata Kuliah</label>
-									<select name="mapel" class="form-control">
+									<select name="matkul" class="form-control">
 										<option value="">- Pilih -</option>
 										<?php
-										$mapel = mysqli_query($con, "SELECT * FROM tb_master_mapel ORDER BY id_mapel ASC");
+										$mapel = mysqli_query($con, "SELECT * FROM tb_matkul ORDER BY id_matkul ASC");
 										foreach ($mapel as $g) {
-											echo "<option value='$g[id_mapel]'>[ $g[kode_mapel] ] $g[mapel]</option>";
+											echo "<option value='$g[id_matkul]'>[ $g[kode_matkul] ] $g[matkul]</option>";
 										}
 										?>
 
@@ -175,8 +175,8 @@ $semAktif = mysqli_fetch_array(mysqli_query($con, "SELECT * FROM tb_semester WHE
 						$kode = $_POST['kode'];
 						$ta = $_POST['ta'];
 						$semester = $_POST['semester'];
-						$guru = $_POST['guru'];
-						$mapel = $_POST['mapel'];
+						$guru = $_POST['dosen'];
+						$mapel = $_POST['matkul'];
 						$hari = $_POST['hari'];
 						$kelas = $_POST['kelas'];
 						$waktu = $_POST['waktu'];

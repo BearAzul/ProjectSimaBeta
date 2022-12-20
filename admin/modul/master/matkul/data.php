@@ -31,9 +31,6 @@
         </div>
         <div class="card-body">
           <div class="table-responsive">
-
-
-
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
@@ -46,24 +43,24 @@
               <tbody>
                 <?php
                 $no = 1;
-                $mapel = mysqli_query($con, "SELECT * FROM tb_master_mapel");
+                $mapel = mysqli_query($con, "SELECT * FROM tb_matkul");
                 foreach ($mapel as $k) { ?>
                   <tr>
                     <td><?= $no++; ?>.</td>
 
-                    <td><?= $k['kode_mapel']; ?></td>
-                    <td><?= $k['mapel']; ?></td>
+                    <td><?= $k['kode_matkul']; ?></td>
+                    <td><?= $k['matkul']; ?></td>
                     <td>
 
-                      <a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#edit<?= $k['id_mapel'] ?>"><i class="far fa-edit"></i> Edit</a>
-                      <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=master&act=delmapel&id=<?= $k['id_mapel'] ?>"><i class="fas fa-trash"></i> Del</a>
+                      <a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#edit<?= $k['id_matkul'] ?>"><i class="far fa-edit"></i> Edit</a>
+                      <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=master&act=delmapel&id=<?= $k['id_matkul'] ?>"><i class="fas fa-trash"></i> Del</a>
 
                       <!-- Modal -->
-                      <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit<?= $k['id_mapel'] ?>" class="modal fade" style="display: none;">
+                      <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit<?= $k['id_matkul'] ?>" class="modal fade" style="display: none;">
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h4 id="exampleModalLabel" class="modal-title">Edit Mapel</h4>
+                              <h4 id="exampleModalLabel" class="modal-title">Edit Matkul</h4>
                               <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
                             </div>
                             <div class="modal-body">
@@ -71,9 +68,9 @@
                                 <div class="row">
                                   <div class="col-md-10">
                                     <div class="form-group">
-                                      <label>Nama mapel</label>
-                                      <input name="id" type="hidden" value="<?= $k['id_mapel'] ?>">
-                                      <input name="mapel" type="text" value="<?= $k['mapel'] ?>" class="form-control">
+                                      <label>Nama Matkul</label>
+                                      <input name="id" type="hidden" value="<?= $k['id_matkul'] ?>">
+                                      <input name="matkul" type="text" value="<?= $k['matkul'] ?>" class="form-control">
                                     </div>
 
                                     <div class="form-group">
@@ -85,11 +82,11 @@
                               </form>
                               <?php
                               if (isset($_POST['edit'])) {
-                                $save = mysqli_query($con, "UPDATE tb_master_mapel SET mapel='$_POST[mapel]' WHERE id_mapel='$_POST[id]' ");
+                                $save = mysqli_query($con, "UPDATE tb_matkul SET matkul='$_POST[matkul]' WHERE id_matkul='$_POST[id]' ");
                                 if ($save) {
                                   echo "<script>
                         alert('Data diubah !');
-                        window.location='?page=master&act=mapel';
+                        window.location='?page=master&act=matkul';
                         </script>";
                                 }
                               }
@@ -124,18 +121,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 id="exampleModalLabel" class="modal-title">Tambah Mapel</h4>
+        <h4 id="exampleModalLabel" class="modal-title">Tambah Matkul</h4>
         <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
       </div>
       <div class="modal-body">
         <form action="" method="post" class="form-horizontal">
           <div class="form-group">
-            <label>Kode mapel</label>
+            <label>Kode Matkul</label>
             <input name="kode" type="text" value="MP-<?= time() ?>" class="form-control" readonly>
           </div>
           <div class="form-group">
-            <label>Nama mapel</label>
-            <input name="mapel" type="text" placeholder="Nama mapel .." class="form-control">
+            <label>Nama Matkul</label>
+            <input name="matkul" type="text" placeholder="Nama mapel .." class="form-control">
           </div>
 
 
@@ -145,11 +142,11 @@
         </form>
         <?php
         if (isset($_POST['save'])) {
-          $save = mysqli_query($con, "INSERT INTO tb_master_mapel VALUES(NULL,'$_POST[kode]','$_POST[mapel]') ");
+          $save = mysqli_query($con, "INSERT INTO tb_matkul VALUES(NULL,'$_POST[kode]','$_POST[matkul]') ");
           if ($save) {
             echo "<script>
                         alert('Data tersimpan !');
-                        window.location='?page=master&act=mapel';
+                        window.location='?page=master&act=matkul';
                         </script>";
           }
         }

@@ -46,7 +46,7 @@ session_start();
                 <div class="logo-header" data-background-color="blue2">
 
                     <a href="index.php">
-                        <img src="assets/img/mts.png" alt="navbar brand" class="navbar-brand" width="40">
+                        <img src="assets/img/LOGO USM.png" alt="navbar brand" class="navbar-brand" width="40">
                         <b class="text-white">Presensi Siswa</b>
                     </a>
                 </div>

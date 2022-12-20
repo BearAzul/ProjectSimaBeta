@@ -47,10 +47,9 @@
                 <?php
                 $no = 1;
                 $mapel = mysqli_query($con, "SELECT * FROM tb_mengajar 
-                            INNER JOIN tb_guru ON tb_mengajar.id_guru=tb_guru.id_guru
-                            INNER JOIN tb_master_mapel ON tb_mengajar.id_mapel=tb_master_mapel.id_mapel
+                            INNER JOIN tb_dosen ON tb_mengajar.id_dosen=tb_dosen.id_dosen
+                            INNER JOIN tb_matkul ON tb_mengajar.id_matkul=tb_matkul.id_matkul
                             INNER JOIN tb_mkelas ON tb_mengajar.id_mkelas=tb_mkelas.id_mkelas
-
                             INNER JOIN tb_semester ON tb_mengajar.id_semester=tb_semester.id_semester
                             INNER JOIN tb_thajaran ON tb_mengajar.id_thajaran=tb_thajaran.id_thajaran 
                                ");
@@ -59,8 +58,8 @@
 
                   <tr>
                     <th scope="row"><b><?= $no++; ?>.</b></th>
-                    <td><?= $d['nama_guru'] ?></td>
-                    <td><?= $d['mapel'] ?></td>
+                    <td><?= $d['nama_dosen'] ?></td>
+                    <td><?= $d['matkul'] ?></td>
                     <td><?= $d['nama_kelas'] ?></td>
                     <td><?= $d['tahun_ajaran'] ?>/<?= $d['semester'] ?></td>
                     <td>

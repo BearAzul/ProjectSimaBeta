@@ -32,11 +32,11 @@ foreach ($edit as $d) ?>
 					<h3 class="h4">Form Edit Dosen</h3>
 				</div>
 				<div class="card-body">
-					<form action="?page=guru&act=proses" method="post" enctype="multipart/form-data">
+					<form action="?page=dosen&act=proses" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label>NIDN</label>
-							<input type="hidden" name="id" value="<?= $d['id_guru'] ?>">
-							<input name="nip" type="text" class="form-control" value="<?= $d['nip'] ?>" readonly>
+							<input type="hidden" name="id" value="<?= $d['id_dosen'] ?>">
+							<input name="nidn" type="text" class="form-control" value="<?= $d['nidn'] ?>">
 						</div>
 
 						<div class="form-group">

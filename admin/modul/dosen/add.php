@@ -32,7 +32,7 @@
           <form action="?page=guru&act=proses" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label>NIDN</label>
-              <input name="nip" type="text" class="form-control" placeholder="NIDN">
+              <input name="nidn" type="text" class="form-control" placeholder="NIDN">
             </div>
 
             <div class="form-group">

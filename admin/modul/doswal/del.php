@@ -1,5 +1,5 @@
 <?php 
-$del = mysqli_query($con,"DELETE FROM tb_walikelas WHERE id_walikelas=$_GET[id]");
+$del = mysqli_query($con,"DELETE FROM tb_dosenwali WHERE id_dosenwali=$_GET[id]");
 if ($del) {
 		echo " <script>
 		alert('Data telah dihapus !');

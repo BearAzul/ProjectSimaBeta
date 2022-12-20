@@ -1,6 +1,6 @@
 	<?php
 
-  $edit = mysqli_query($con, "SELECT * FROM tb_siswa WHERE id_siswa='$_GET[id]' ");
+  $edit = mysqli_query($con, "SELECT * FROM tb_mahasiswa WHERE id_mahasiswa='$_GET[id]' ");
   foreach ($edit as $d) ?>
 	<div class="page-inner">
 	  <div class="page-header">
@@ -34,19 +34,19 @@
 	        <div class="card-body">
 
 
-	          <form action="?page=siswa&act=proses" method="post" enctype="multipart/form-data">
-	            <input name="id" type="hidden" value="<?= $d['id_siswa'] ?>">
+	          <form action="?page=mahasiswa&act=proses" method="post" enctype="multipart/form-data">
+	            <input name="id" type="hidden" value="<?= $d['id_mahasiswa'] ?>">
 
 	            <table cellpadding="3" style="font-weight: bold;">
 	              <tr>
 	                <td>Nama Lengkap </td>
 	                <td>:</td>
-	                <td><input type="text" class="form-control" name="nama" value="<?= $d['nama_siswa'] ?>"></td>
+	                <td><input type="text" class="form-control" name="nama" value="<?= $d['nama_mahasiswa'] ?>"></td>
 	              </tr>
 	              <tr>
 	                <td>NIM</td>
 	                <td>:</td>
-	                <td><input name="nis" type="text" class="form-control" value="<?= $d['nis'] ?>" readonly> </td>
+	                <td><input name="nim" type="text" class="form-control" value="<?= $d['nim'] ?>"> </td>
 	              </tr>
 	              <tr>
 	                <td>Tempat,Tanggal Lahir </td>
