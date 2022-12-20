@@ -5,10 +5,6 @@
 				<h2 class="text-white pb-2 fw-bold">Aplikasi Presensi</h2>
 				<h5 class="text-white op-7 mb-2">Selamat Datang, <b class="text-warning"><?= $data['nama_siswa']; ?></b></h5>
 			</div>
-			<!-- <div class="ml-md-auto py-2 py-md-0">
-								<a href="#" class="btn btn-white btn-border btn-round mr-2">Manage</a>
-								<a href="#" class="btn btn-secondary btn-round">Add Customer</a>
-							</div> -->
 		</div>
 	</div>
 </div>
@@ -35,9 +31,6 @@
 		</div>
 		<div class="col-md-6">
 			<div class="card">
-				<!-- 	<div class="card-header">
-									<h4 class="card-title">Nav Pills With Icon (Horizontal Tabs)</h4>
-								</div> -->
 				<div class="card-body">
 					<ul class="nav nav-pills nav-secondary  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
 						<li class="nav-item">

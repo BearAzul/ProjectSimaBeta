@@ -13,14 +13,6 @@ foreach ($kelasMengajar as $d)
 
 ?>
 
-
-
-<!-- 
-<div class="panel-header bg-primary-gradient">
-					<div class="page-inner py-5">
-						
-					</div>
-				</div> -->
 <div class="page-inner">
 
 	<div class="page-header">

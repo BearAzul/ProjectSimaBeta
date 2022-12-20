@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2022 at 05:38 PM
+-- Generation Time: Dec 20, 2022 at 06:57 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_imas`
+-- Database: `simabeta`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +41,7 @@ CREATE TABLE `tb_admin` (
 --
 
 INSERT INTO `tb_admin` (`id_admin`, `nama_lengkap`, `username`, `password`, `aktif`, `foto`) VALUES
-(1, 'Adya Abdu Azizul Hakim', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Y', 'admin.png');
+(1, 'Adya Abdu Azizul Hakim', 'admin@gmail.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Y', 'imageProfile3.png');
 
 -- --------------------------------------------------------
 
@@ -66,7 +66,8 @@ CREATE TABLE `tb_guru` (
 INSERT INTO `tb_guru` (`id_guru`, `nip`, `nama_guru`, `email`, `password`, `foto`, `status`) VALUES
 (9, '52526171', 'Krida Pandu Gunata, S.Pd., M.Kom.', 'pandukrida@gmail.com', '65c2e9700aab13ea63483ea9b27dadbfc2ef886d', 'profile-icon-male-user-person-avatar-symbol-vector-20910833.jpg', 'Y'),
 (10, '7417934', 'SUSANTO, S.Kom, M.Kom', 'susanto@gmail.com', 'bffb093f13667e777e18cab4ce913ba72e9643f7', 'admin.png', 'Y'),
-(11, '26567374', 'Lenny Margaretta Huizen, S.Kom., M.Kom.', 'lennymargaret@gmail.com', '9bde8c3231703b26f96293530178a37152807f2c', 'guru.png', 'Y');
+(11, '26567374', 'Lenny Margaretta Huizen, S.Kom., M.Kom.', 'lennymargaret@gmail.com', '9bde8c3231703b26f96293530178a37152807f2c', 'guru.png', 'Y'),
+(12, '7473423', 'SITI ASMIATUN, S.Kom., M.Kom.', 'asmiatunsiti@gmail.com', '664d2f87320d0729180132a0b4d2fe20cb91bae9', 'guru.png', 'Y');
 
 -- --------------------------------------------------------
 
@@ -125,7 +126,8 @@ INSERT INTO `tb_mengajar` (`id_mengajar`, `kode_pelajaran`, `hari`, `jam_mengaja
 (6, 'MPL-1582242668', 'Senin', '08.00-09.00', '1', 5, 1, 1, 4, 8),
 (7, 'MPL-1616673172', 'Senin', '08.00-09.00', '1', 5, 1, 5, 4, 8),
 (8, 'MPL-1671464590', 'Rabu', '10.00-11.00', '3-4', 9, 5, 5, 4, 9),
-(9, 'MPL-1671464865', 'Rabu', '08.00-09.00', '1-2', 11, 3, 5, 4, 9);
+(9, 'MPL-1671464865', 'Rabu', '08.00-09.00', '1-2', 11, 3, 5, 4, 9),
+(11, 'MPL-1671510514', 'Selasa', '08.00-13.00', '1-10', 12, 6, 5, 4, 9);
 
 -- --------------------------------------------------------
 
@@ -194,11 +196,8 @@ CREATE TABLE `tb_siswa` (
 --
 
 INSERT INTO `tb_siswa` (`id_siswa`, `nis`, `nama_siswa`, `tempat_lahir`, `tgl_lahir`, `jk`, `alamat`, `password`, `foto`, `status`, `th_angkatan`, `id_mkelas`) VALUES
-(1, '001', 'Imam Hambali', 'Jakarta', '2020-03-01', 'L', 'Jl. Mawar', 'e193a01ecf8d30ad0affefd332ce934e32ffce72', '355-3553881_stockvader-predicted-adig-user-profile-icon-png-clipart.jpg', '1', 2020, 1),
-(2, '002', 'Agis Sagita', 'bogor', '2012-06-02', 'P', 'jl. batok tenjo-bogor', '6fc978af728d43c59faa400d5f6e0471ac850d4c', '17603.png', '1', 2019, 3),
-(3, '004', 'indah nuraeni', 'bogor', '2009-07-01', 'L', 'bogor', 'c63528a52274a35d1c07bd9e55a83c6eb073de81', '17603.png', '1', 2019, 1),
-(4, '12345', 'Suci', 'TANGERANG', '2002-09-21', 'P', 'Kademangan', '8cb2237d0679ca88db6464eac60da96345513964', 'IMG_20180830_164642_853.jpg', '1', 2019, 1),
-(5, 'G211210077', 'Adya Abdu Azizul Hakim', 'Batang', '2002-12-16', 'L', 'Pancuran, Plelen', '0eb64ef97df0a2a67367489389ebf8ede527f512', '355-3553881_stockvader-predicted-adig-user-profile-icon-png-clipart.jpg', '1', 2021, 5);
+(5, 'G211210077', 'Adya Abdu Azizul Hakim', 'Batang', '2002-12-16', 'L', 'Pancuran, Plelen', '0eb64ef97df0a2a67367489389ebf8ede527f512', 'imageProfile3.png', '1', 2021, 5),
+(6, 'G211210069', 'Wisnu Cahya Ramadhan', 'Semarang', '2003-11-14', 'L', 'Semarang ', 'd463315cbd286ecda31348365959fa5ffe5a8625', '495-4952535_create-digital-profile-icon-blue-user-profile-icon.png', '1', 2021, 5);
 
 -- --------------------------------------------------------
 
@@ -276,7 +275,9 @@ INSERT INTO `_logabsensi` (`id_presensi`, `id_mengajar`, `id_siswa`, `tgl_absen`
 (11, 6, 4, '2021-03-23', 'H', '1'),
 (12, 6, 1, '2021-03-25', 'I', '2'),
 (13, 6, 3, '2021-03-25', 'I', '2'),
-(14, 6, 4, '2021-03-25', 'I', '2');
+(14, 6, 4, '2021-03-25', 'I', '2'),
+(15, 8, 5, '2022-12-20', 'H', '1'),
+(16, 8, 6, '2022-12-20', 'H', '1');
 
 --
 -- Indexes for dumped tables
@@ -359,7 +360,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_guru`
 --
 ALTER TABLE `tb_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_master_mapel`
@@ -371,7 +372,7 @@ ALTER TABLE `tb_master_mapel`
 -- AUTO_INCREMENT for table `tb_mengajar`
 --
 ALTER TABLE `tb_mengajar`
-  MODIFY `id_mengajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_mengajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tb_mkelas`
@@ -389,7 +390,7 @@ ALTER TABLE `tb_semester`
 -- AUTO_INCREMENT for table `tb_siswa`
 --
 ALTER TABLE `tb_siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_thajaran`
@@ -407,7 +408,7 @@ ALTER TABLE `tb_walikelas`
 -- AUTO_INCREMENT for table `_logabsensi`
 --
 ALTER TABLE `_logabsensi`
-  MODIFY `id_presensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_presensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

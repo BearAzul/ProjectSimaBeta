@@ -31,9 +31,6 @@
 		</div>
 		<div class="col-md-6">
 			<div class="card">
-				<!-- 	<div class="card-header">
-									<h4 class="card-title">Nav Pills With Icon (Horizontal Tabs)</h4>
-								</div> -->
 				<div class="card-body">
 					<ul class="nav nav-pills nav-secondary  nav-pills-no-bd nav-pills-icons justify-content-center" id="pills-tab-with-icon" role="tablist">
 						<li class="nav-item">

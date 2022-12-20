@@ -67,7 +67,6 @@ $data = mysqli_fetch_array($sql);
 			<div class="logo-header" data-background-color="blue">
 
 				<a href="dashboard.php" class="logo">
-					<!-- <img src="../assets/img/mts.png" alt="navbar brand" class="navbar-brand" width="40"> -->
 					<b class="text-white">Universitas Semarang</b>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -204,7 +203,7 @@ $data = mysqli_fetch_array($sql);
 										</a>
 									</li>
 									<li>
-										<a href="?page=walas">
+										<a href="?page=doswal">
 											<span class="sub-item">Dosen Wali</span>
 										</a>
 									</li>
@@ -242,12 +241,12 @@ $data = mysqli_fetch_array($sql);
 							<div class="collapse" id="guru">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="?page=guru&act=add ">
+										<a href="?page=dosen&act=add ">
 											<span class="sub-item"> Tambah Dosen </span>
 										</a>
 									</li>
 									<li>
-										<a href="?page=guru">
+										<a href="?page=dosen">
 											<span class="sub-item"> Daftar Dosen </span>
 										</a>
 									</li>
@@ -264,12 +263,12 @@ $data = mysqli_fetch_array($sql);
 							<div class="collapse" id="siswa">
 								<ul class="nav nav-collapse">
 									<li>
-										<a href="?page=siswa&act=add ">
+										<a href="?page=mahasiswa&act=add ">
 											<span class="sub-item"> Tambah Mahasiswa </span>
 										</a>
 									</li>
 									<li>
-										<a href="?page=siswa">
+										<a href="?page=mahasiswa">
 											<span class="sub-item"> Daftar Mahasiswa </span>
 										</a>
 									</li>
@@ -281,11 +280,6 @@ $data = mysqli_fetch_array($sql);
 								<p>Logout</p>
 							</a>
 						</li>
-
-						<!-- 
-						<li class="mx-4 mt-2">
-							<a href="logout.php" class="btn btn-primary btn-block"><span class="btn-label"> <i class="fas fa-arrow-alt-circle-left"></i> </span> Logout</a> 
-						</li> -->
 					</ul>
 				</div>
 			</div>
@@ -324,55 +318,37 @@ $data = mysqli_fetch_array($sql);
 						include 'modul/master/ta/set.php';
 						// mapel
 					} elseif ($act == 'mapel') {
-						include 'modul/master/mapel/data.php';
+						include 'modul/master/matkul/data.php';
 					} elseif ($act == 'delmapel') {
-						include 'modul/master/mapel/del.php';
+						include 'modul/master/matkul/del.php';
 					}
-				} elseif ($page == 'walas') {
+				} elseif ($page == 'doswal') {
 					if ($act == '') {
-						include 'modul/wakel/data.php';
+						include 'modul/doswal/data.php';
 					}
-				} elseif ($page == 'kepsek') {
+				} elseif ($page == 'dosen') {
 					if ($act == '') {
-						include 'modul/kepsek/data.php';
+						include 'modul/dosen/data.php';
 					} elseif ($act == 'add') {
-						include 'modul/kepsek/add.php';
+						include 'modul/dosen/add.php';
 					} elseif ($act == 'edit') {
-						include 'modul/kepsek/edit.php';
+						include 'modul/dosen/edit.php';
 					} elseif ($act == 'del') {
-						include 'modul/kepsek/del.php';
+						include 'modul/dosen/del.php';
 					} elseif ($act == 'proses') {
-						include 'modul/kepsek/proses.php';
+						include 'modul/dosen/proses.php';
 					}
-				} elseif ($page == 'guru') {
+				} elseif ($page == 'mahasiswa') {
 					if ($act == '') {
-						include 'modul/guru/data.php';
+						include 'modul/mahasiswa/data.php';
 					} elseif ($act == 'add') {
-						include 'modul/guru/add.php';
+						include 'modul/mahasiswa/add.php';
 					} elseif ($act == 'edit') {
-						include 'modul/guru/edit.php';
+						include 'modul/mahasiswa/edit.php';
 					} elseif ($act == 'del') {
-						include 'modul/guru/del.php';
+						include 'modul/mahasiswa/del.php';
 					} elseif ($act == 'proses') {
-						include 'modul/guru/proses.php';
-					}
-				} elseif ($page == 'siswa') {
-					if ($act == '') {
-						include 'modul/siswa/data.php';
-					} elseif ($act == 'add') {
-						include 'modul/siswa/add.php';
-					} elseif ($act == 'edit') {
-						include 'modul/siswa/edit.php';
-					} elseif ($act == 'del') {
-						include 'modul/siswa/del.php';
-					} elseif ($act == 'proses') {
-						include 'modul/siswa/proses.php';
-					}
-				} elseif ($page == 'rekap') {
-					if ($act == '') {
-						include 'modul/rekap/rekap_absen.php';
-					} elseif ($act = 'rekap-perbulan') {
-						include 'modul/rekap/rekap_perbulan.php';
+						include 'modul/mahasiswa/proses.php';
 					}
 				} elseif ($page == 'jadwal') {
 					if ($act == '') {

@@ -15,11 +15,6 @@
 				GROUP BY MONTH(tgl_absen) ORDER BY MONTH(tgl_absen) DESC
 			 ");
 
-			// foreach ($qry as $bulan) {
-			// 	echo date('m',strtotime($bulan['tgl_absen']));
-			// }
-
-
 			 foreach ($qry as $bulan) { ?>
 			 	<?php 
 			 	$bulan = date('m',strtotime($bulan['tgl_absen']));

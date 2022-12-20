@@ -29,12 +29,12 @@ foreach ($izin as $d)
 				<td><strong> <?= $d['nama_siswa']; ?> </strong></td>
 			</tr>
 			<tr>
-				<td>Nis</td>
+				<td>NIM</td>
 				<td>:</td>
 				<td><?= $d['nis']; ?></td>
 			</tr>
 			<tr>
-				<td>Gender</td>
+				<td>Jenis Kelamin</td>
 				<td>:</td>
 				<td><?= $d['jk']; ?></td>
 			</tr>
