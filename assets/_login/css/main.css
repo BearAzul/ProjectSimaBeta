@@ -49,7 +49,7 @@ a {
 	line-height: 1.7;
 	color: #666666;
 	margin: 0px;
-	transition: all 0.4s;
+  transition: all 0.4s;
 	-webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -361,7 +361,7 @@ iframe {
   display: block;
   position: relative;
   z-index: 1;
-  border-radius: 25px;
+  border-radius: 10px;
   overflow: hidden;
   margin: 0 auto;
 }

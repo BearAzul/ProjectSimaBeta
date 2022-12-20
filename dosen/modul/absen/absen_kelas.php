@@ -2,12 +2,12 @@
 // tampilkan data mengajar
 $kelasMengajar = mysqli_query($con, "SELECT * FROM tb_mengajar 
 
-INNER JOIN tb_master_mapel ON tb_mengajar.id_mapel=tb_master_mapel.id_mapel
+INNER JOIN tb_matkul ON tb_mengajar.id_matkul=tb_matkul.id_matkul
 INNER JOIN tb_mkelas ON tb_mengajar.id_mkelas=tb_mkelas.id_mkelas
 
 INNER JOIN tb_semester ON tb_mengajar.id_semester=tb_semester.id_semester
 INNER JOIN tb_thajaran ON tb_mengajar.id_thajaran=tb_thajaran.id_thajaran
-WHERE tb_mengajar.id_guru='$data[id_guru]' AND tb_mengajar.id_mengajar='$_GET[pelajaran]'  AND tb_thajaran.status=1  ");
+WHERE tb_mengajar.id_dosen='$data[id_dosen]' AND tb_mengajar.id_mengajar='$_GET[pelajaran]'  AND tb_thajaran.status=1  ");
 
 foreach ($kelasMengajar as $d)
 
@@ -33,7 +33,7 @@ foreach ($kelasMengajar as $d)
 				<i class="flaticon-right-arrow"></i>
 			</li>
 			<li class="nav-item">
-				<a href="#"><?= strtoupper($d['mapel']) ?></a>
+				<a href="#"><?= strtoupper($d['matkul']) ?></a>
 			</li>
 		</ul>
 
@@ -81,25 +81,25 @@ foreach ($kelasMengajar as $d)
 
 						// tampilakan data siswa berdasarkan kelas yang dipilih
 
-						$siswa = mysqli_query($con, "SELECT * FROM tb_siswa WHERE id_mkelas='$d[id_mkelas]' ORDER BY id_siswa ASC ");
-						$jumlahSiswa = mysqli_num_rows($siswa);
+						$mahasiswa = mysqli_query($con, "SELECT * FROM tb_mahasiswa WHERE id_mkelas='$d[id_mkelas]' ORDER BY id_mahasiswa ASC ");
+						$jumlahSiswa = mysqli_num_rows($mahasiswa);
 						foreach ($siswa as $i => $s) { ?>
 
 							<div class="item-list">
 								<div class="info-user">
 									<div class="username">
-										<b class="text-success"><?= $s['nama_siswa'] ?></b>
+										<b class="text-success"><?= $s['nama_mahasiswa'] ?></b>
 										<?php
 										// tampilkan data yg sudah absen
 										$tgl_hari_ini = date('Y-m-d');
-										$siswa_telah_absen_hari_ini = mysqli_query($con, "SELECT * FROM _logabsensi INNER JOIN tb_siswa ON _logabsensi.id_siswa=tb_siswa.id_siswa WHERE _logabsensi.id_siswa='$s[id_siswa]' AND _logabsensi.tgl_absen='$tgl_hari_ini' AND _logabsensi.id_mengajar='$_GET[pelajaran]' AND _logabsensi.ket='' ");
+										$siswa_telah_absen_hari_ini = mysqli_query($con, "SELECT * FROM _logabsensi INNER JOIN tb_mahasiswa ON _logabsensi.id_mahasiswa=tb_mahasiswa.id_mahasiswa WHERE _logabsensi.id_mahasiswa='$s[id_mahasiswa]' AND _logabsensi.tgl_absen='$tgl_hari_ini' AND _logabsensi.id_mengajar='$_GET[pelajaran]' AND _logabsensi.ket='' ");
 										if (mysqli_num_rows($siswa_telah_absen_hari_ini) < 1) {
 
 										}
 
 										?>
-										<!-- (<code><?= $s['nis'] ?></code>) -->
-										<input type="hidden" name="id_siswa-<?= $i; ?>" value="<?= $s['id_siswa'] ?>">
+										<!-- (<code><?= $s['nim'] ?></code>) -->
+										<input type="hidden" name="id_mahasiswa-<?= $i; ?>" value="<?= $s['id_mahasiswa'] ?>">
 
 										<input type="hidden" name="pelajaran" value="<?= $_GET['pelajaran'] ?>">
 									</div>
@@ -140,23 +140,10 @@ foreach ($kelasMengajar as $d)
 											</label>
 
 										</div>
-
-
-
-
-
-
-
 									</div>
 								</div>
-
-
 							</div>
 						<?php } ?>
-
-
-
-
 					</div>
 					<!-- <input type="submit" name="absen" class="btn btn-info"> -->
 					<center>
@@ -181,12 +168,12 @@ foreach ($kelasMengajar as $d)
 
 				for ($i = 0; $i <= $total; $i++) {
 
-					$id_siswa = $_POST['id_siswa-' . $i];
+					$id_siswa = $_POST['id_mahasiswa-' . $i];
 					$pelajaran = $_POST['pelajaran'];
 					$ket = $_POST['ket-' . $i];
 
 
-					$cekAbsesnHariIni = mysqli_num_rows(mysqli_query($con, "SELECT * FROM _logabsensi WHERE tgl_absen='$today' AND id_mengajar='$pelajaran' AND id_siswa='$id_siswa' "));
+					$cekAbsesnHariIni = mysqli_num_rows(mysqli_query($con, "SELECT * FROM _logabsensi WHERE tgl_absen='$today' AND id_mengajar='$pelajaran' AND id_mahasiswa='$id_siswa' "));
 
 					if ($cekAbsesnHariIni > 0) {
 

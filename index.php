@@ -40,7 +40,6 @@ include 'config/db.php';
 			<div class="wrap-login100">
 				<form method="post" action="" class="login100-form validate-form">
 					<span class="login100-form-title p-b-10">
-						<!-- <i class="zmdi zmdi-font"></i> -->
 						<img src="./assets/img/LOGO USM.png" width="100">
 					</span>
 					<span class="login100-form-title p-b-26">
@@ -85,18 +84,18 @@ include 'config/db.php';
 					$level = $_POST['level'];
 					$pass = sha1($_POST['password']);
 					if ($level == 1) {
-						// Guru
-						$sqlCek = mysqli_query($con, "SELECT * FROM tb_guru WHERE nip='$_POST[username]' AND password='$pass' AND status='Y'");
+						// Dosen
+						$sqlCek = mysqli_query($con, "SELECT * FROM tb_dosen WHERE nidn='$_POST[username]' AND password='$pass' AND status='Y'");
 						$jml = mysqli_num_rows($sqlCek);
 						$d = mysqli_fetch_array($sqlCek);
 
 						if ($jml > 0) {
-							$_SESSION['guru'] = $d['id_guru'];
+							$_SESSION['dosen'] = $d['id_dosen'];
 							echo "
 						<script type='text/javascript'>
 						setTimeout(function () { 
 						
-						swal('($d[nama_guru]) ', 'Login berhasil', {
+						swal('($d[nama_dosen]) ', 'Login berhasil', {
 						icon : 'success',
 						buttons: {        			
 						confirm: {
@@ -130,19 +129,19 @@ include 'config/db.php';
 						}
 					} elseif ($level == 2) {
 						// Siswa
-						$sqlCek = mysqli_query($con, "SELECT * FROM tb_siswa WHERE nis='$_POST[username]' AND password='$pass' AND status='1'");
+						$sqlCek = mysqli_query($con, "SELECT * FROM tb_mahasiswa WHERE nim='$_POST[username]' AND password='$pass' AND status='1'");
 						$jml = mysqli_num_rows($sqlCek);
 						$d = mysqli_fetch_array($sqlCek);
 
 						if ($jml > 0) {
-							$_SESSION['siswa'] = $d['id_siswa'];
+							$_SESSION['mahasiswa'] = $d['id_mahasiswa'];
 
 
 							echo "
 								<script type='text/javascript'>
 								setTimeout(function () { 
 								
-								swal('($d[nama_siswa]) ', 'Login berhasil', {
+								swal('($d[nama_mahasiswa]) ', 'Login berhasil', {
 								icon : 'success',
 								buttons: {        			
 								confirm: {
@@ -193,8 +192,6 @@ include 'config/db.php';
 								} ,3000);   
 								</script>";
 					}
-				} else {
-					echo "Tidak ada level yg dipilih";
 				}
 				?>
 			</div>

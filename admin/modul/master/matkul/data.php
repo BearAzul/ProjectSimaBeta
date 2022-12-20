@@ -53,7 +53,7 @@
                     <td>
 
                       <a href="" class="btn btn-info btn-sm" data-toggle="modal" data-target="#edit<?= $k['id_matkul'] ?>"><i class="far fa-edit"></i> Edit</a>
-                      <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=master&act=delmapel&id=<?= $k['id_matkul'] ?>"><i class="fas fa-trash"></i> Del</a>
+                      <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=master&act=delmatkul&id=<?= $k['id_matkul'] ?>"><i class="fas fa-trash"></i> Del</a>
 
                       <!-- Modal -->
                       <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit<?= $k['id_matkul'] ?>" class="modal fade" style="display: none;">

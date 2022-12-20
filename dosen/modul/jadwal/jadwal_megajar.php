@@ -31,7 +31,7 @@
 				<div class="alert alert-info alert-dismissible" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
 					<strong>
-						<h3><?= $jd['mapel']; ?></h3>
+						<h3><?= $jd['matkul']; ?></h3>
 					</strong>
 					<hr>
 					<ul>

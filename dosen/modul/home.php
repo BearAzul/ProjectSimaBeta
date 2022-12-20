@@ -3,7 +3,7 @@
 		<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 			<div>
 				<h2 class="text-white pb-2 fw-bold">Aplikasi Presensi</h2>
-				<h5 class="text-white op-7 mb-2">Selamat Datang, <b class="text-warning"><?= $data['nama_guru']; ?></b></h5>
+				<h5 class="text-white op-7 mb-2">Selamat Datang, <b class="text-warning"><?= $data['nama_dosen']; ?></b></h5>
 			</div>
 		</div>
 	</div>
@@ -57,7 +57,7 @@
 									<li class="list-group-item">
 										<a class="btn btn-primary btn-block text-left" href="?page=absen&pelajaran=<?= $dm['id_mengajar'] ?> ">
 											<i class="fas fa-chevron-circle-right"></i>
-											<span class="sub-item"><?= strtoupper($dm['mapel']); ?> (<?= strtoupper($dm['nama_kelas']); ?>)</span>
+											<span class="sub-item"><?= strtoupper($dm['matkul']); ?> (<?= strtoupper($dm['nama_kelas']); ?>)</span>
 										</a>
 									</li>
 								<?php } ?>
@@ -76,7 +76,7 @@
 									<li class="list-group-item">
 										<a class="btn btn-secondary btn-block text-left" href="?page=rekap&pelajaran=<?= $dm['id_mengajar'] ?> ">
 											<i class="fas fa-chevron-circle-right"></i>
-											<span class="sub-item"><?= strtoupper($dm['mapel']); ?> (<?= strtoupper($dm['nama_kelas']); ?>)</span>
+											<span class="sub-item"><?= strtoupper($dm['matkul']); ?> (<?= strtoupper($dm['nama_kelas']); ?>)</span>
 										</a>
 										<?php
 										$bulan = date('m');

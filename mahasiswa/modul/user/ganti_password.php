@@ -9,8 +9,8 @@
 		</div>
 		<div class="card-body">
 			<div class="user-profile text-center">
-				<div class="name"><?= $data['nama_siswa'] ?></div>
-				<div class="job"><?= $data['nis'] ?></div>
+				<div class="name"><?= $data['nama_mahasiswa'] ?></div>
+				<div class="job"><?= $data['nim'] ?></div>
 				<div class="desc">Kelas (<?= $data['nama_kelas'] ?>)</div>
 
 				<form action="">

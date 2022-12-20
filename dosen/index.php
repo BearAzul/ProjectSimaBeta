@@ -2,7 +2,7 @@
 @session_start();
 include '../config/db.php';
 
-if (!isset($_SESSION['guru'])) {
+if (!isset($_SESSION['dosen'])) {
 ?> <script>
 		alert('Maaf ! Anda Belum Login !!');
 		window.location = '../user.php';
@@ -13,20 +13,20 @@ if (!isset($_SESSION['guru'])) {
 
 
 <?php
-$id_login = @$_SESSION['guru'];
-$sql = mysqli_query($con, "SELECT * FROM tb_guru
- WHERE id_guru = '$id_login'") or die(mysqli_error($con));
+$id_login = @$_SESSION['dosen'];
+$sql = mysqli_query($con, "SELECT * FROM tb_dosen
+ WHERE id_dosen = '$id_login'") or die(mysqli_error($con));
 $data = mysqli_fetch_array($sql);
 
 // tampilkan data mengajar
 $mengajar = mysqli_query($con, "SELECT * FROM tb_mengajar 
 
-INNER JOIN tb_master_mapel ON tb_mengajar.id_mapel=tb_master_mapel.id_mapel
+INNER JOIN tb_matkul ON tb_mengajar.id_matkul=tb_matkul.id_matkul
 INNER JOIN tb_mkelas ON tb_mengajar.id_mkelas=tb_mkelas.id_mkelas
 
 INNER JOIN tb_semester ON tb_mengajar.id_semester=tb_semester.id_semester
 INNER JOIN tb_thajaran ON tb_mengajar.id_thajaran=tb_thajaran.id_thajaran
-WHERE tb_mengajar.id_guru='$data[id_guru]' AND tb_thajaran.status=1 ");
+WHERE tb_mengajar.id_dosen='$data[id_dosen]' AND tb_thajaran.status=1 ");
 
 ?>
 <!DOCTYPE html>
@@ -70,7 +70,6 @@ WHERE tb_mengajar.id_guru='$data[id_guru]' AND tb_thajaran.status=1 ");
 			<div class="logo-header" data-background-color="blue">
 
 				<a href="index.php" class="logo">
-					<!-- <img src="../assets/img/mts.png" alt="navbar brand" class="navbar-brand" width="40"> -->
 					<b class="text-white">Presensi Mahasiswa</b>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,7 +103,7 @@ WHERE tb_mengajar.id_guru='$data[id_guru]' AND tb_thajaran.status=1 ");
 										<div class="user-box">
 											<div class="avatar-lg"><img src="../assets/img/user/<?= $data['foto'] ?>" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4><?= $data['nama_guru'] ?></h4>
+												<h4><?= $data['nama_dosen'] ?></h4>
 												<p class="text-muted"><?= $data['email'] ?></p>
 												<a href="?page=jadwal" class="btn btn-xs btn-secondary btn-sm">Jadwal Mengajar</a>
 											</div>
@@ -136,8 +135,8 @@ WHERE tb_mengajar.id_guru='$data[id_guru]' AND tb_thajaran.status=1 ");
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									<?= $data['nama_guru'] ?>
-									<span class="user-level"><?= $data['nip'] ?></span>
+									<?= $data['nama_dosen'] ?>
+									<span class="user-level"><?= $data['nidn'] ?></span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -191,25 +190,7 @@ WHERE tb_mengajar.id_guru='$data[id_guru]' AND tb_thajaran.status=1 ");
 										<li>
 											<a href="?page=absen&pelajaran=<?= $dm['id_mengajar'] ?> ">
 												<span class="sub-item">
-													<!-- <?= strtoupper($dm['mapel']); ?> -->KELAS (<?= strtoupper($dm['nama_kelas']); ?>)
-												</span>
-											</a>
-										</li>
-									<?php } ?>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item">
-							<div class="collapse" id="rekapAbsen">
-								<ul class="nav nav-collapse">
-									<?php
-
-
-									foreach ($mengajar as $dm) { ?>
-										<li>
-											<a href="?page=rekap&pelajaran=<?= $dm['id_mengajar'] ?> ">
-												<span class="sub-item">
-													<!-- <?= strtoupper($dm['mapel']); ?> -->KELAS (<?= strtoupper($dm['nama_kelas']); ?>)
+													<!-- <?= strtoupper($dm['matkul']); ?> -->KELAS (<?= strtoupper($dm['nama_kelas']); ?>)
 												</span>
 											</a>
 										</li>

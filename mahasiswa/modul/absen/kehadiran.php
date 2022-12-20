@@ -2,7 +2,7 @@
 <div class="card">
 	<div class="card-body">
 
-		<h4 class="card-title">Kehadiran | <b style="text-transform: uppercase;"><code> <?=$data['nama_siswa'] ?> </code></b></h4>
+		<h4 class="card-title">Kehadiran | <b style="text-transform: uppercase;"><code> <?=$data['nama_mahasiswa'] ?> </code></b></h4>
 		<hr>
 		<div class="row">
 			<?php 
@@ -11,7 +11,7 @@
 				INNER JOIN tb_mengajar ON _logabsensi.id_mengajar=tb_mengajar.id_mengajar
 				INNER JOIN tb_thajaran ON tb_mengajar.id_thajaran=tb_thajaran.id_thajaran
 				INNER JOIN tb_semester ON tb_mengajar.id_semester=tb_semester.id_semester
-				WHERE _logabsensi.id_siswa='$data[id_siswa]' and tb_thajaran.status=1 and tb_semester.status=1
+				WHERE _logabsensi.id_mahasiswa='$data[id_mahasiswa]' and tb_thajaran.status=1 and tb_semester.status=1
 				GROUP BY MONTH(tgl_absen) ORDER BY MONTH(tgl_absen) DESC
 			 ");
 
@@ -35,7 +35,7 @@
 								<td>:</td>
 								<td>
 									<?php 
-								$hadir = mysqli_fetch_array(mysqli_query($con,"SELECT COUNT(ket) AS hadir FROM _logabsensi WHERE id_siswa='$data[id_siswa]' and ket='H' and MONTH(tgl_absen)='$bulan' "));
+								$hadir = mysqli_fetch_array(mysqli_query($con,"SELECT COUNT(ket) AS hadir FROM _logabsensi WHERE id_mahasiswa='$data[id_mahasiswa]' and ket='H' and MONTH(tgl_absen)='$bulan' "));
 								echo $hadir['hadir'];
 								?>
 								</td>
@@ -45,7 +45,7 @@
 								<td>:</td>
 								<td>
 								<?php 
-								$sakit = mysqli_fetch_array(mysqli_query($con,"SELECT COUNT(ket) AS sakit FROM _logabsensi WHERE id_siswa='$data[id_siswa]' and ket='S' and MONTH(tgl_absen)='$bulan' "));
+								$sakit = mysqli_fetch_array(mysqli_query($con,"SELECT COUNT(ket) AS sakit FROM _logabsensi WHERE id_mahasiswa='$data[id_mahasiswa]' and ket='S' and MONTH(tgl_absen)='$bulan' "));
 								echo $sakit['sakit'];
 								?>
 								</td>
@@ -55,7 +55,7 @@
 								<td>:</td>
 								<td>
 									<?php 
-								$izin = mysqli_fetch_array(mysqli_query($con,"SELECT COUNT(ket) AS izin FROM _logabsensi WHERE id_siswa='$data[id_siswa]' and ket='I' and MONTH(tgl_absen)='$bulan' "));
+								$izin = mysqli_fetch_array(mysqli_query($con,"SELECT COUNT(ket) AS izin FROM _logabsensi WHERE id_mahasiswa='$data[id_mahasiswa]' and ket='I' and MONTH(tgl_absen)='$bulan' "));
 								echo $izin['izin'];
 								?>
 								</td>
@@ -65,7 +65,7 @@
 								<td>:</td>
 								<td>
 									<?php 
-								$alfa = mysqli_fetch_array(mysqli_query($con,"SELECT COUNT(ket) AS alfa FROM _logabsensi WHERE id_siswa='$data[id_siswa]' and ket='A' and MONTH(tgl_absen)='$bulan' "));
+								$alfa = mysqli_fetch_array(mysqli_query($con,"SELECT COUNT(ket) AS alfa FROM _logabsensi WHERE id_mahasiswa='$data[id_mahasiswa]' and ket='A' and MONTH(tgl_absen)='$bulan' "));
 								echo $alfa['alfa'];
 								?>
 								</td>

@@ -319,7 +319,7 @@ $data = mysqli_fetch_array($sql);
 						// mapel
 					} elseif ($act == 'matkul') {
 						include 'modul/master/matkul/data.php';
-					} elseif ($act == 'delmapel') {
+					} elseif ($act == 'delmatkul') {
 						include 'modul/master/matkul/del.php';
 					}
 				} elseif ($page == 'doswal') {
