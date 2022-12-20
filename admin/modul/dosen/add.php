@@ -53,7 +53,7 @@
               <input type="file" name="foto">
             </div>
             <div class="form-group">
-              <button name="saveGuru" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
+              <button name="saveDosen" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
               <a href="javascript:history.back()" class="btn btn-warning"><i class="fa fa-chevron-left"></i> Batal</a>
             </div>
           </form>

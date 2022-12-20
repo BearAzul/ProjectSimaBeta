@@ -28,7 +28,7 @@
           <h3 class="h4">Form Entry Siswa</h3>
         </div>
         <div class="card-body">
-          <form action="?page=siswa&act=proses" method="post" enctype="multipart/form-data">
+          <form action="?page=mahasiswa&act=proses" method="post" enctype="multipart/form-data">
 
             <table cellpadding="3" style="font-weight: bold;">
               <tr>
@@ -97,7 +97,7 @@
               </tr>
               <tr>
                 <td colspan="3">
-                  <button name="saveSiswa" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
+                  <button name="saveMahasiswa" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Simpan</button>
                   <a href="javascript:history.back()" class="btn btn-warning"><i class="fa fa-chevron-left"></i> Batal</a>
                 </td>
               </tr>

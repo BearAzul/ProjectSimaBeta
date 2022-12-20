@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['saveGuru'])) {
+if (isset($_POST['saveDosen'])) {
 
 	$pass = sha1($_POST['nip']);
 
@@ -25,12 +25,12 @@ if (isset($_POST['saveGuru'])) {
 				});    
 				},10);  
 				window.setTimeout(function(){ 
-				window.location.replace('?page=guru');
+				window.location.replace('?page=dosen');
 				} ,3000);   
 				</script>";
 		}
 	}
-} elseif (isset($_POST['editGuru'])) {
+} elseif (isset($_POST['editDosen'])) {
 
 	$pass = sha1($_POST['email']);
 	$gambar = @$_FILES['foto']['name'];
@@ -55,7 +55,7 @@ if (isset($_POST['saveGuru'])) {
 				});    
 				},10);  
 				window.setTimeout(function(){ 
-				window.location.replace('?page=guru');
+				window.location.replace('?page=dosen');
 				} ,3000);   
 				</script>";
 	}

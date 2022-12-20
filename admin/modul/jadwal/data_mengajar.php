@@ -66,7 +66,6 @@
                     <td>
                       <a href="?page=jadwal&act=cancel&id=<?= $d['id_mengajar']; ?>" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Batal</a>
 
-                      <!-- <a  href="?page=nilai&mapel=<?= $d['id_pelajaran']; ?>" class="btn btn-success btn-sm"><i class="fas fa-file-contract"></i> Lihat Absen</a> -->
                     </td>
                   </tr>
                 <?php } ?>

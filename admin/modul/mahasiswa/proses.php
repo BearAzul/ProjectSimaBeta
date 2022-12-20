@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['saveSiswa'])) {
+if (isset($_POST['saveMahasiswa'])) {
 
 	$pass = sha1($_POST['nis']);
 	$sumber = @$_FILES['foto']['tmp_name'];
@@ -25,12 +25,12 @@ if (isset($_POST['saveSiswa'])) {
 				});    
 				},10);  
 				window.setTimeout(function(){ 
-				window.location.replace('?page=siswa');
+				window.location.replace('?page=mahasiswa');
 				} ,3000);   
 				</script>";
 		}
 	}
-} elseif (isset($_POST['editSiswa'])) {
+} elseif (isset($_POST['editMahasiswa'])) {
 
 	$gambar = @$_FILES['foto']['name'];
 	if (!empty($gambar)) {
@@ -54,7 +54,7 @@ if (isset($_POST['saveSiswa'])) {
 				});    
 				},10);  
 				window.setTimeout(function(){ 
-				window.location.replace('?page=siswa');
+				window.location.replace('?page=mahasiswa');
 				} ,3000);   
 				</script>";
 	}

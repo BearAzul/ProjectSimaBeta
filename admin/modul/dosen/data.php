@@ -58,8 +58,8 @@
               <tbody>
                 <?php
                 $no = 1;
-                $guru = mysqli_query($con, "SELECT * FROM tb_guru");
-                foreach ($guru as $g) { ?>
+                $dosen = mysqli_query($con, "SELECT * FROM tb_guru");
+                foreach ($dosen as $g) { ?>
                   <tr>
                     <td><?= $no++; ?>.</td>
 
@@ -73,8 +73,8 @@
                         } ?></td>
                     <td><img src="../assets/img/user/<?= $g['foto'] ?>" width="45" height="45"></td>
                     <td>
-                      <a class="btn btn-info btn-sm" href="?page=guru&act=edit&id=<?= $g['id_guru'] ?>"><i class="far fa-edit"></i></a>
-                      <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=guru&act=del&id=<?= $g['id_guru'] ?>"><i class="fas fa-trash"></i>
+                      <a class="btn btn-info btn-sm" href="?page=dosen&act=edit&id=<?= $g['id_guru'] ?>"><i class="far fa-edit"></i></a>
+                      <a class="btn btn-danger btn-sm" onclick="return confirm('Yakin Hapus Data ??')" href="?page=dosen&act=del&id=<?= $g['id_guru'] ?>"><i class="fas fa-trash"></i>
                       </a>
                     </td>
                   </tr>

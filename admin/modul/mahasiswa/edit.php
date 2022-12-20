@@ -109,7 +109,7 @@
 	              </tr>
 	              <tr>
 	                <td colspan="3">
-	                  <button name="editSiswa" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
+	                  <button name="editMahasiswa" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
 	                  <a href="javascript:history.back()" class="btn btn-warning"><i class="fa fa-chevron-left"></i> Batal</a>
 	                </td>
 	              </tr>

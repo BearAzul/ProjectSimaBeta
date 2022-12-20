@@ -57,7 +57,7 @@ foreach ($edit as $d) ?>
 							<input type="file" name="foto">
 						</div>
 						<div class="form-group">
-							<button name="editGuru" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
+							<button name="editDosen" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Update</button>
 							<a href="javascript:history.back()" class="btn btn-warning"><i class="fa fa-chevron-left"></i> Batal</a>
 						</div>
 
