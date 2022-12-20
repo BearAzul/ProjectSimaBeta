@@ -9,7 +9,7 @@ if (isset($_POST['saveDosen'])) {
 	$nama_gambar = @$_FILES['foto']['name'];
 	$pindah = move_uploaded_file($sumber, $target . $nama_gambar);
 	if ($pindah) {
-		$save = mysqli_query($con, "INSERT INTO tb_dosen VALUES(NULL,'$_POST[nip]','$_POST[nama]','$_POST[email]','$pass','$nama_gambar','Y') ");
+		$save = mysqli_query($con, "INSERT INTO tb_dosen VALUES(NULL,'$_POST[nidn]','$_POST[nama]','$_POST[email]','$pass','$nama_gambar','Y') ");
 		if ($save) {
 			echo "
 				<script type='text/javascript'>

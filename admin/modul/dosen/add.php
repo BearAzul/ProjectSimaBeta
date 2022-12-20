@@ -26,10 +26,10 @@
     <div class="col-lg-8">
       <div class="card">
         <div class="card-header d-flex align-items-center">
-          <h3 class="h4">Form Entry Guru</h3>
+          <h3 class="h4">Form Entry Dosen</h3>
         </div>
         <div class="card-body">
-          <form action="?page=guru&act=proses" method="post" enctype="multipart/form-data">
+          <form action="?page=dosen&act=proses" method="post" enctype="multipart/form-data">
             <div class="form-group">
               <label>NIDN</label>
               <input name="nidn" type="text" class="form-control" placeholder="NIDN">

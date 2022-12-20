@@ -1,6 +1,6 @@
 <?php
 
-$edit = mysqli_query($con, "SELECT * FROM tb_guru WHERE id_guru='$_GET[id]' ");
+$edit = mysqli_query($con, "SELECT * FROM tb_dosen WHERE id_dosen='$_GET[id]' ");
 foreach ($edit as $d) ?>
 <div class="page-inner">
 	<div class="page-header">
@@ -40,13 +40,12 @@ foreach ($edit as $d) ?>
 						</div>
 
 						<div class="form-group">
-							<label>Nama Guru</label>
-							<input name="nama" type="text" class="form-control" value="<?= $d['nama_guru'] ?>">
+							<label>Nama Dosen</label>
+							<input name="nama" type="text" class="form-control" value="<?= $d['nama_dosen'] ?>">
 						</div>
 
 						<div class="form-group">
 							<label>Email</label>
-							<!-- <span class="text-danger"><em>Email digunakan unruk Password default</em></span> -->
 							<input name="email" type="text" class="form-control" value="<?= $d['email'] ?>">
 						</div>
 						<div class="form-group">

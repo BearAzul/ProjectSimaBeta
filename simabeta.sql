@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2022 at 12:04 PM
+-- Generation Time: Dec 20, 2022 at 06:09 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -67,7 +67,8 @@ INSERT INTO `tb_dosen` (`id_dosen`, `nidn`, `nama_dosen`, `email`, `password`, `
 (9, '52526171', 'Krida Pandu Gunata, S.Pd., M.Kom.', 'pandukrida@gmail.com', '65c2e9700aab13ea63483ea9b27dadbfc2ef886d', 'profile-icon-male-user-person-avatar-symbol-vector-20910833.jpg', 'Y'),
 (10, '7417934', 'SUSANTO, S.Kom, M.Kom', 'susanto@gmail.com', 'bffb093f13667e777e18cab4ce913ba72e9643f7', 'admin.png', 'Y'),
 (11, '26567374', 'Lenny Margaretta Huizen, S.Kom., M.Kom.', 'lennymargaret@gmail.com', '9bde8c3231703b26f96293530178a37152807f2c', 'guru.png', 'Y'),
-(12, '7473423', 'SITI ASMIATUN, S.Kom., M.Kom.', 'asmiatunsiti@gmail.com', '664d2f87320d0729180132a0b4d2fe20cb91bae9', 'guru.png', 'Y');
+(12, '7473423', 'SITI ASMIATUN, S.Kom., M.Kom.', 'asmiatunsiti@gmail.com', '664d2f87320d0729180132a0b4d2fe20cb91bae9', 'guru.png', 'Y'),
+(13, '83246489', 'SRI HANDAYANI, S.T., M.T.', 'handayani@gmail.com', 'b17bfa4e85d9ef956ee522ba254f386888ca190a', 'guru.png', 'Y');
 
 -- --------------------------------------------------------
 
@@ -91,7 +92,8 @@ INSERT INTO `tb_dosenwali` (`id_dosenwali`, `id_dosen`, `id_mkelas`) VALUES
 (3, 5, 3),
 (4, 6, 1),
 (5, 8, 2),
-(6, 10, 5);
+(6, 10, 5),
+(7, 10, 6);
 
 -- --------------------------------------------------------
 
@@ -119,11 +121,8 @@ CREATE TABLE `tb_mahasiswa` (
 --
 
 INSERT INTO `tb_mahasiswa` (`id_mahasiswa`, `nim`, `nama_mahasiswa`, `tempat_lahir`, `tgl_lahir`, `jk`, `alamat`, `password`, `foto`, `status`, `th_angkatan`, `id_mkelas`) VALUES
-(5, 'G211210077', 'Adya Abdu Azizul Hakim', 'Batang', '2002-12-16', 'L', 'Pancuran, Plelen', '0eb64ef97df0a2a67367489389ebf8ede527f512', 'imageProfile3.png', '1', 2021, 5),
-(6, 'G211210069', 'Wisnu Cahya Ramadhan', 'Semarang', '2003-11-14', 'L', 'Semarang ', 'd463315cbd286ecda31348365959fa5ffe5a8625', '495-4952535_create-digital-profile-icon-blue-user-profile-icon.png', '1', 2021, 5),
-(7, 'G211210088', 'Jamilatur Risqil Yasiri', 'Rembang', '2001-05-14', 'P', 'Jl. Rembang ', 'ae9df7ed21a47aa62ff4e50701b7bc94cb9fd0c3', 'guru.png', '1', 2021, 8),
-(8, 'G211210064', 'Taufik Alif Salahhudin', 'Demak', '2002-05-27', 'L', 'Jl. Demak', 'ebb80fa9c7b44002a969bb6d4fa0e817b38c98de', 'admin.png', '1', 2021, 8),
-(9, 'G211210078', 'Debi Safa Nurdewanti', 'Magelang', '2003-08-21', 'P', 'Jl. Magelang', '8cc779d6b1469ddf6a3cb986c9b11ace42180ad3', 'guru.png', '1', 2021, 5);
+(11, 'G211210069', 'Wisnu Cahya Ramadhan', 'Semarang', '2002-05-15', 'L', 'Semarang', 'd463315cbd286ecda31348365959fa5ffe5a8625', 'kepala.png', '1', 2021, 10),
+(12, 'G211210077', 'Adya Abdu Azizul Hakim ', 'Batang ', '2002-12-16', 'L', 'Jl. Pancuran, Plelen', '0eb64ef97df0a2a67367489389ebf8ede527f512', 'imageProfile3.png', '1', 2021, 10);
 
 -- --------------------------------------------------------
 
@@ -149,7 +148,8 @@ INSERT INTO `tb_matkul` (`id_matkul`, `kode_matkul`, `matkul`) VALUES
 (5, 'MP-1561872013', 'Pemrograman Framework'),
 (6, 'MP-1561872026', 'Struktur Data'),
 (7, 'MP-1561872043', 'Kecerdasan Buatan'),
-(8, 'MP-1615002340', 'Komputer Animasi');
+(9, 'MP-1671549516', 'Komputer Animasi'),
+(10, 'MP-1671551572', 'Manajemen Jaringan');
 
 -- --------------------------------------------------------
 
@@ -184,7 +184,8 @@ INSERT INTO `tb_mengajar` (`id_mengajar`, `kode_pelajaran`, `hari`, `jam_mengaja
 (8, 'MPL-1671464590', 'Rabu', '10.00-11.00', '3-4', 9, 5, 5, 4, 9),
 (9, 'MPL-1671464865', 'Rabu', '08.00-09.00', '1-2', 11, 3, 5, 4, 9),
 (11, 'MPL-1671510514', 'Selasa', '08.00-13.00', '1-10', 12, 6, 5, 4, 9),
-(12, 'MPL-1671527633', 'Rabu', '08.00-13.00', '1-8', 12, 6, 8, 4, 9);
+(16, 'MPL-1671554133', 'Selasa', '22:00-24:00', '8-12', 9, 5, 10, 4, 9),
+(17, 'MPL-1671554163', 'Rabu', '22:00-01:00', '8-14', 11, 3, 10, 4, 9);
 
 -- --------------------------------------------------------
 
@@ -203,10 +204,10 @@ CREATE TABLE `tb_mkelas` (
 --
 
 INSERT INTO `tb_mkelas` (`id_mkelas`, `kd_kelas`, `nama_kelas`) VALUES
-(5, 'KL-1616673105', 'TI B Pagi'),
 (6, 'KL-1616673114', 'TI B Sore'),
 (8, 'KL-1671463127', 'TI A Pagi'),
-(9, 'KL-1671463139', 'TI A Sore');
+(9, 'KL-1671463139', 'TI A Sore'),
+(10, 'KL-1671549472', 'TI B Pagi');
 
 -- --------------------------------------------------------
 
@@ -281,7 +282,14 @@ INSERT INTO `_logabsensi` (`id_presensi`, `id_mengajar`, `id_mahasiswa`, `tgl_ab
 (13, 6, 3, '2021-03-25', 'I', '2'),
 (14, 6, 4, '2021-03-25', 'I', '2'),
 (15, 8, 5, '2022-12-20', 'H', '1'),
-(16, 8, 6, '2022-12-20', 'H', '1');
+(16, 8, 6, '2022-12-20', 'H', '1'),
+(17, 0, 0, '2022-12-20', '', '2'),
+(18, 15, 10, '2022-12-20', 'H', '1'),
+(19, 15, 11, '2022-12-20', 'H', '1'),
+(20, 17, 11, '2022-12-20', 'H', '1'),
+(21, 17, 12, '2022-12-20', 'I', '1'),
+(22, 16, 11, '2022-12-20', 'H', '1'),
+(23, 16, 12, '2022-12-20', 'H', '1');
 
 --
 -- Indexes for dumped tables
@@ -364,37 +372,37 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_dosen`
 --
 ALTER TABLE `tb_dosen`
-  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_dosen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `tb_dosenwali`
 --
 ALTER TABLE `tb_dosenwali`
-  MODIFY `id_dosenwali` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_dosenwali` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tb_mahasiswa`
 --
 ALTER TABLE `tb_mahasiswa`
-  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_mahasiswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tb_matkul`
 --
 ALTER TABLE `tb_matkul`
-  MODIFY `id_matkul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_matkul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tb_mengajar`
 --
 ALTER TABLE `tb_mengajar`
-  MODIFY `id_mengajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_mengajar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tb_mkelas`
 --
 ALTER TABLE `tb_mkelas`
-  MODIFY `id_mkelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_mkelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tb_semester`
@@ -412,7 +420,7 @@ ALTER TABLE `tb_thajaran`
 -- AUTO_INCREMENT for table `_logabsensi`
 --
 ALTER TABLE `_logabsensi`
-  MODIFY `id_presensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_presensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

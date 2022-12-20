@@ -186,7 +186,7 @@ foreach ($kelasMengajar as $d)
                     print_r($_POST);
                     echo "</pre>";
 
-                    $updte_absen = mysqli_query($con, "UPDATE _logabsensi SET ket='$ket' WHERE id_mengajar='$pelajaran' AND id_siswa='$id_siswa' AND tgl_absen='$hari_sekarang' ");
+                    $updte_absen = mysqli_query($con, "UPDATE _logabsensi SET ket='$ket' WHERE id_mengajar='$pelajaran' AND id_mahasiswa='$id_siswa' AND tgl_absen='$hari_sekarang' ");
 
                     if ($updte_absen) {
 

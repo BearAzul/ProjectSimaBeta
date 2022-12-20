@@ -25,7 +25,7 @@
     <div class="col-lg-8">
       <div class="card">
         <div class="card-header d-flex align-items-center">
-          <h3 class="h4">Form Entry Siswa</h3>
+          <h3 class="h4">Form Entry Mahasiswa</h3>
         </div>
         <div class="card-body">
           <form action="?page=mahasiswa&act=proses" method="post" enctype="multipart/form-data">

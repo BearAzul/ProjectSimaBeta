@@ -81,8 +81,8 @@ foreach ($kelasMengajar as $d)
 
 						// tampilakan data siswa berdasarkan kelas yang dipilih
 
-						$mahasiswa = mysqli_query($con, "SELECT * FROM tb_mahasiswa WHERE id_mkelas='$d[id_mkelas]' ORDER BY id_mahasiswa ASC ");
-						$jumlahSiswa = mysqli_num_rows($mahasiswa);
+						$siswa = mysqli_query($con, "SELECT * FROM tb_mahasiswa WHERE id_mkelas='$d[id_mkelas]' ORDER BY id_mahasiswa ASC ");
+						$jumlahSiswa = mysqli_num_rows($siswa);
 						foreach ($siswa as $i => $s) { ?>
 
 							<div class="item-list">
