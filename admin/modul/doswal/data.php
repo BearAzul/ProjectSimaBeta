@@ -42,11 +42,7 @@
                         <tbody>
                             <?php
                             $no = 1;
-                            $kelas = mysqli_query($con, "SELECT * FROM tb_dosenwali
-                INNER JOIN tb_dosen ON tb_dosenwali.id_dosen=tb_dosen.id_dosen
-                INNER JOIN tb_mkelas ON tb_dosenwali.id_mkelas=tb_mkelas.id_mkelas
-
-                ORDER BY tb_dosenwali.id_mkelas DESC");
+                            $kelas = mysqli_query($con, "SELECT * FROM tb_dosenwali INNER JOIN tb_dosen ON tb_dosenwali.id_dosen=tb_dosen.id_dosen INNER JOIN tb_mkelas ON tb_dosenwali.id_mkelas=tb_mkelas.id_mkelas ORDER BY tb_dosenwali.id_mkelas DESC");
                             foreach ($kelas as $k) { ?>
                                 <tr>
                                     <td><?= $no++; ?>.</td>
@@ -70,8 +66,8 @@
                                                         <form action="" method="post" class="form-horizontal">
                                                             <input type="hidden" name="id" value="<?= $k['id_dosenwali'] ?>">
                                                             <div class="form-group">
-                                                                <label>Nama Guru</label>
-                                                                <select name="wakel" class="form-control">
+                                                                <label>Nama Dosen</label>
+                                                                <select name="dosenwali" class="form-control">
                                                                     <?php
                                                                     $wkel = mysqli_query($con, "SELECT * FROM tb_dosen");
                                                                     foreach ($wkel as $wk) {
@@ -119,7 +115,7 @@
                                                         </form>
                                                         <?php
                                                         if (isset($_POST['edit'])) {
-                                                            $save = mysqli_query($con, "UPDATE tb_dosenwali SET id_dosen='$_POST[wakel]',id_mkelas='$_POST[kelas]' WHERE id_dosenwali='$_POST[id]' ");
+                                                            $save = mysqli_query($con, "UPDATE tb_dosenwali SET id_dosen='$_POST[dosenwali]',id_mkelas='$_POST[kelas]' WHERE id_dosenwali='$_POST[id]' ");
                                                             if ($save) {
                                                                 echo "<script>
                         alert('Data diubah !');
@@ -138,19 +134,11 @@
                                             <!-- /.modal-dialog -->
                                         </div>
                                         <!-- /.modal -->
-
-
-
                                     </td>
                                 </tr>
                             <?php } ?>
                         </tbody>
                     </table>
-
-
-
-
-
                 </div>
             </div>
         </div>
@@ -170,12 +158,12 @@
                 <form action="" method="post" class="form-horizontal">
                     <div class="form-group">
                         <label>Nama Dosen</label>
-                        <select name="wakel" class="form-control">
+                        <select name="dosenwali" class="form-control">
                             <option value="">Pilih Dosen</option>
                             <?php
-                            $wkel = mysqli_query($con, "SELECT * FROM tb_guru");
+                            $wkel = mysqli_query($con, "SELECT * FROM tb_dosen");
                             foreach ($wkel as $wk) {
-                                echo "<option value='$wk[id_guru]'>$wk[nama_guru]</option>";
+                                echo "<option value='$wk[id_dosen]'>$wk[nama_dosen]</option>";
                             }
 
                             ?>
@@ -203,11 +191,11 @@
                 </form>
                 <?php
                 if (isset($_POST['save'])) {
-                    $save = mysqli_query($con, "INSERT INTO tb_walikelas VALUES(NULL,'$_POST[wakel]','$_POST[kelas]') ");
+                    $save = mysqli_query($con, "INSERT INTO tb_dosenwali VALUES(NULL,'$_POST[dosenwali]','$_POST[kelas]') ");
                     if ($save) {
                         echo "<script>
                         alert('Data tersimpan !');
-                        window.location='?page=walas';
+                        window.location='?page=doswal';
                         </script>";
                     }
                 }
